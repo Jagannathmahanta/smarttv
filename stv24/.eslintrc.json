@@ -1,0 +1,71 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    "/commitlint.config.js",
+    "/public/comscore.js",
+    "/public/polyfill.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "react-hooks", "import", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "shorthandLast": false,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ],
+    "no-duplicate-imports": "error",
+    "no-param-reassign": "error",
+    "import/newline-after-import": ["error"],
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }],
+    "semi": ["error", "always"],
+    "indent": ["error", 2],
+    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }],
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-space-before-closing": ["error", "always"],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "any", "prev": "directive", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "if" }
+    ],
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-boolean-value": ["error", "always"],
+    "import/order": [
+      "error",
+      {
+        "groups": [["external", "builtin"], "internal", ["sibling", "parent"], "index"],
+        "newlines-between": "always"
+      }
+    ],
+    "space-in-parens": ["error", "always"],
+    "space-before-function-paren": ["error", "never"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
